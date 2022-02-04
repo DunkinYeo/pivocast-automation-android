@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Pivo Cast Android Test" >
+    <test name ="Pivo Cast App Login Test">
+        <parameter name="deviceName" value="3i-A4-2021-332"/>
+        <parameter name="platformVersion" value="11"/>
+        <parameter name="udid" value="R3CR801099P"/>
+        <classes>
+            <class name="test.login.LoginTest"/>
+            <class name="test.login.LoginFailTest"/>
+        </classes>
+    </test>
+</suite>
