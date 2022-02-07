@@ -24,19 +24,32 @@ public class LoginView extends BaseView{
     @AndroidFindBy(id = "app.pivo.android.meet:id/btn_google_sign_in")
     AndroidElement googleBtn;
 
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.TextView[1]")
+    AndroidElement googleFirstBtn;
+
     @AndroidFindBy(id = "app.pivo.android.meet:id/btn_facebook_sign_in")
     AndroidElement facebookBtn;
 
     @AndroidFindBy(id = "app.pivo.android.meet:id/signUpButton")
     AndroidElement signupBtn;
 
+    @AndroidFindBy(id = "app.pivo.android.meet:id/title_text")
+    AndroidElement warningTxt;
+
     @AndroidFindBy(id = "app.pivo.android.meet:id/positive_btn")
     AndroidElement loginFailOkBtn;
+
+    @AndroidFindBy(id = "app.pivo.android.meet:id/textinput_error")
+    AndroidElement inputErrorTxt;
 
     /*****TEST METHOD*****/
 
     public void clickGoogleBtn(){
         click(googleBtn);
+    }
+
+    public void clickGoogleFirstBtn(){
+        click(googleFirstBtn);
     }
 
     public void clickFacebookBtn(){
@@ -67,6 +80,11 @@ public class LoginView extends BaseView{
 
     public String getEmailTxt(){
         String text = getAttribute(emailInput,"text" );
+        return text;
+    }
+
+    public String getWarningTxt(){
+        String text = getAttribute(warningTxt, "text");
         return text;
     }
 

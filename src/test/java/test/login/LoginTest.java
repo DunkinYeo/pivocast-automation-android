@@ -31,4 +31,34 @@ public class LoginTest extends BaseTest {
         String actualResult = loginView.getEmailTxt();
         Assert.assertEquals(actualResult, "E-mail", "Fail to redirect to Login view");
     }
+
+    @Test
+    public void loginGoogleAccount(){
+        loginView = new LoginView(driver);
+        connectPodView = new ConnectPodView(driver);
+        mainView = new MainView(driver);
+
+        loginView.clickGoogleBtn();
+        loginView.clickGoogleFirstBtn();
+        connectPodView.clickConnectBtn();
+        mainView.signOut();
+
+        String actualResult = loginView.getEmailTxt();
+        Assert.assertEquals(actualResult, "E-mail", "Fail to redirect to Login view");
+    }
+
+    @Test
+    public void loginFacebookAccount(){
+        loginView = new LoginView(driver);
+        connectPodView = new ConnectPodView(driver);
+        mainView = new MainView(driver);
+
+        loginView.clickFacebookBtn();
+        connectPodView.clickConnectBtn();
+        mainView.signOut();
+
+        String actualResult = loginView.getEmailTxt();
+        Assert.assertEquals(actualResult, "E-mail", "Fail to redirect to Login view");
+    }
+
 }
